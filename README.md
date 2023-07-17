@@ -1,4 +1,4 @@
-#Rust Learning Repository
+# Rust Learning Repository
 
 Welcome to the Rust Learning Repository! This repository is designed to help you learn the Rust programming language. It serves as a valuable resource for individuals who are new to Rust or looking to expand their knowledge and skills in the language.
 
