@@ -1,3 +1,4 @@
+use colored::*;
 mod palindrome;
 
 fn main() {
@@ -18,9 +19,9 @@ fn main() {
             break;
         }
         if palindrome::is_palindrome(word) {
-            println!("{} is a palindrome.", word);
+            println!("{} is a palindrome.", word.green());
         } else {
-            println!("{} is not a palindrome.", word);
+            println!("{} is not a palindrome.", word.yellow());
         }
     }
 }
