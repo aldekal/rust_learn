@@ -1,30 +1,26 @@
-// Function to check if a given string is a palindrome
-fn is_palindrome(text: &str) -> bool {
-    // Reverse the characters in the string and collect them into a new string
-    let reversed = text.chars().rev().collect::<String>();
-    
-    // Compare the original string with the reversed string
-    // If they are the same, the text is a palindrome
-    text == reversed
-}
+mod palindrome;
 
-#[cfg(test)]
-mod tests {
-    use super::*; // Import the functions from the parent module
-
-    #[test]
-    fn test_is_palindrome() {
-            // Define a word to test
-            let word = "radar";
-    
-            // Check if the word is a palindrome using the is_palindrome function
-            if is_palindrome(word) {
-                println!("{} is a palindrome.", word);
-            } else {
-                println!("{} is not a palindrome.", word);
-            }
-    }
-
-}
 fn main() {
+    println!("+++ Welcome to String Tools with +++");
+    println!("  _____    _    _    _____   _______ ");
+    println!(" |  __ \\  | |  | |  / ____| |__   __|");
+    println!(" | |__) | | |  | | | (___      | |   ");
+    println!(" |  _  /  | |  | |  \\___ \\     | |   ");
+    println!(" | | \\ \\  | |__| |  ____) |    | |   ");
+    println!(" |_|  \\_\\  \\____/  |_____/     |_|   ");
+
+    loop {
+        println!("Enter a word to check if it is a palindrome:");
+        let mut word = String::new();
+        std::io::stdin().read_line(&mut word).expect("Failed to read line");
+        let word = word.trim();
+        if word == "exit" {
+            break;
+        }
+        if palindrome::is_palindrome(word) {
+            println!("{} is a palindrome.", word);
+        } else {
+            println!("{} is not a palindrome.", word);
+        }
+    }
 }
